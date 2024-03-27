@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller('users')
-export class UsersController {}
+export class UsersController {
+  @Get('/get-user')
+  async getUser() {
+    return { id: 1, name: 'Yarok' };
+  }
+}
