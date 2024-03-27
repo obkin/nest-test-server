@@ -9,19 +9,19 @@ export class UsersRepository {
     @InjectModel(UserModel) private usersRepository: typeof UserModel,
   ) {}
 
-  createNewUser(dto: UserCreateDto) {
+  async createNewUser(dto: UserCreateDto) {
     try {
-      this.usersRepository.create(dto);
+      return await this.usersRepository.create(dto);
     } catch (e) {
       throw new Error(e.message);
     }
   }
 
-  getAllUsers() {
+  async getAllUsers() {
     try {
-      //
+      // return await
     } catch (e) {
-      //
+      throw new Error(e.message);
     }
   }
 }
